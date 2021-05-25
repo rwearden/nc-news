@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
+import { convertTime } from '../utils/utils';
 
 const Articles = ({ topics }) => {
   const [articles, setArticles] = useState([]);
@@ -18,8 +19,6 @@ const Articles = ({ topics }) => {
     <div>
       <h2>{params.topic ? `Welcome to shm/${params.topic}!` : ''}</h2>
       <div className="articles">
-        {/* <h2>{params.topic ? 'truthy value' : 'falsey value'}</h2> */}
-        {/* wanted to use topic description as tag line for subredit */}
         <ul>
           {articles.map((article) => {
             return (
@@ -27,7 +26,7 @@ const Articles = ({ topics }) => {
                 <Link to={`/articles/${article.article_id}`}>
                   <p>smh/{article.topic}</p>
                   <p>Posted by: {article.author}</p>
-                  <p>{article.created_at}</p>
+                  <p>Posted on: {convertTime(article.created_at)}</p>
                   <h3 className="article-title">{article.title}</h3>
                 </Link>
               </li>
@@ -38,13 +37,5 @@ const Articles = ({ topics }) => {
     </div>
   );
 };
-
-/* <li key="item.item_id">
-              <Link to={`/items/${item.item_id}`}>
-                <h2>{item.item_name}</h2>
-                <img src={item.img_url} alt={item.item_name} width="250" />
-                <h2>{`£${item.price / 100}`}</h2>
-              </Link>
-            </li> */
 
 export default Articles;

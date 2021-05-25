@@ -14,7 +14,7 @@ const Nav = ({ topics, setTopics }) => {
     <Container>
       <div>
         <nav className="nav-bar">
-          <Link to="/topics">shm/allTopics </Link>
+          {/* <Link to="/topics">shm/all </Link> */}
           {topics.map((topic) => {
             return (
               <Link
