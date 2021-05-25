@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
-import Button from '@material-ui/core/Button';
-import UpIcon from '@material-ui/icons/ArrowUpward';
-import DownIcon from '@material-ui/icons/ArrowDownward';
 
 const Articles = ({ topics }) => {
   const [articles, setArticles] = useState([]);
   const params = useParams();
-  console.log(topics);
+  // console.log(topics);
 
   useEffect(() => {
     getArticles(params.topic).then((articlesFromApi) => {
@@ -19,7 +16,7 @@ const Articles = ({ topics }) => {
 
   return (
     <div>
-      <h2>Welcome to shm/{params.topic}!</h2>
+      <h2>{params.topic ? `Welcome to shm/${params.topic}!` : ''}</h2>
       <div className="articles">
         {/* <h2>{params.topic ? 'truthy value' : 'falsey value'}</h2> */}
         {/* wanted to use topic description as tag line for subredit */}
@@ -33,11 +30,6 @@ const Articles = ({ topics }) => {
                   <p>{article.created_at}</p>
                   <h3 className="article-title">{article.title}</h3>
                 </Link>
-                <div className="votes">
-                  <p>Votes: {article.votes}</p>
-                  <Button startIcon={<UpIcon />}></Button>
-                  <Button startIcon={<DownIcon />}></Button>
-                </div>
               </li>
             );
           })}

@@ -4,8 +4,9 @@ import { getCommentsByArticle } from '../utils/api';
 import Button from '@material-ui/core/Button';
 import UpIcon from '@material-ui/icons/ArrowUpward';
 import DownIcon from '@material-ui/icons/ArrowDownward';
+import PostComment from './PostComment';
 
-const Comments = () => {
+const Comments = ({ id }) => {
   const [comments, setComments] = useState([]);
   const params = useParams();
 
@@ -17,6 +18,7 @@ const Comments = () => {
 
   return (
     <div>
+      {/* <PostComment comments={comments} setComments={setComments} id={id} /> */}
       <h2>Comments:</h2>
       <ul className="comments-section">
         {comments.map((comment) => {

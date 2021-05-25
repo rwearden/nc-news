@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getSingleArticle } from '../utils/api';
 import Comments from './Comments';
-import Button from '@material-ui/core/Button';
-import UpIcon from '@material-ui/icons/ArrowUpward';
-import DownIcon from '@material-ui/icons/ArrowDownward';
+import ArticleVote from './ArticleVote';
 
 const SingleArticle = () => {
   const [article, setArticle] = useState([[]]);
   const params = useParams();
+  // console.log(article);
 
   useEffect(() => {
     getSingleArticle(params.article_id).then((articleFromApi) => {
@@ -27,40 +26,14 @@ const SingleArticle = () => {
         <h2 className="article-title">{article[0].title}</h2>
         <p>{article[0].body}</p>
         <div className="votes">
-          <p>Votes: {article[0].votes}</p>
-          <Button startIcon={<UpIcon />}></Button>
-          <Button startIcon={<DownIcon />}></Button>
+          <ArticleVote votes={article[0].votes} id={article[0].article_id} />
         </div>
       </div>
       <div>
-        <Comments />
+        <Comments id={article[0].article_id} />
       </div>
     </div>
   );
 };
 
 export default SingleArticle;
-
-// import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { fetchSingleItem } from '../utils/api';
-
-// const SingleItem = () => {
-//   const params = useParams();
-//   const [item, setItem] = useState({});
-
-//   useEffect(() => {
-//     fetchSingleItem(params.item_id).then((data) => setItem(data.item));
-//   }, [params.item_id]);
-
-//   return (
-//     <div>
-//       <h1>{item.item_name}</h1>
-//       <img src={item.img_url} alt={item.item_name} width="500"></img>
-//       <h2>£{item.price / 100}</h2>
-//       <p>{item.description}</p>
-//     </div>
-//   );
-// };
-
-// export default SingleItem;
