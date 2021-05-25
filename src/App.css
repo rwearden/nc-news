@@ -1,38 +1,86 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  font-size: 1.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.shmeddit-logo {
+  border-radius: 100em;
+  width: 5em;
+}
+
+.title-banner {
+  background-color: #e78d70;
+}
+
+.nav-bar {
+  background-color: #6f83c3;
+  padding: 1em;
+  overflow: auto;
+}
+
+.nav-bar a {
+  float: left;
   color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a:hover {
+  background-color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.articles {
+  text-align: left;
+}
+.article-title {
+  text-align: center;
+}
+
+.article-card {
+  border-style: solid;
+  list-style-type: none;
+  border-width: 2px;
+  border-color: rgb(48, 48, 48);
+  border-radius: 0.3em;
+  margin: 0 2em 2em;
+}
+.article-card a {
+  text-decoration: none;
+}
+
+.article-body-card {
+  text-align: left;
+  border-style: solid;
+  list-style-type: none;
+  border-width: 2px;
+  border-color: rgb(48, 48, 48);
+  border-radius: 0.3em;
+  margin: 2em 2em 2em 2em;
+}
+
+.comments-section {
+  padding: 0;
+}
+
+.comment {
+  text-align: left;
+  border-style: solid;
+  list-style-type: none;
+  border-width: 2px;
+  border-color: #e78d70;
+  border-radius: 0.3em;
+  padding-left: none;
+  margin-bottom: 1em;
+}
+.votes {
+  text-align: center;
 }
