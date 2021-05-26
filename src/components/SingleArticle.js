@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getSingleArticle } from '../utils/api';
-import Comments from './Comments';
 import ArticleVote from './ArticleVote';
+import Comments from './Comments';
 import { convertTime } from '../utils/utils';
 
 const SingleArticle = () => {
   const [article, setArticle] = useState([[]]);
   const params = useParams();
-  // console.log(article);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getSingleArticle(params.article_id).then((articleFromApi) => {
       setArticle(articleFromApi);
+      setIsLoading(false);
     });
   }, [params.article_id]);
 
@@ -30,7 +32,11 @@ const SingleArticle = () => {
         </div>
       </div>
       <div>
-        <Comments id={article[0].article_id} />
+        {isLoading ? (
+          <p>...loading</p>
+        ) : (
+          <Comments id={article[0].article_id} />
+        )}
       </div>
     </div>
   );

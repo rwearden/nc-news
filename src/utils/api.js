@@ -36,14 +36,13 @@ export const patchArticleVote = async (articleId, num) => {
   const { data } = await newsApi.patch(`/articles/${articleId}`, {
     inc_votes: num
   });
-  console.log(data);
 };
 
 ////////// POST REQUESTS //////////
 export const postComment = async (articleId, body) => {
   const { data } = await newsApi.post(`/articles/${articleId}/comments`, {
-    username: 'pickle_rick_96',
+    username: 'jessjelly',
     body: body
   });
-  console.log(data);
+  return data;
 };

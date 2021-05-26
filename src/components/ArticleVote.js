@@ -5,7 +5,6 @@ import DownIcon from '@material-ui/icons/ArrowDownward';
 import { patchArticleVote } from '../utils/api';
 
 const ArticleVote = ({ votes, id }) => {
-  console.log(votes, id);
   const [voteUpdate, setVoteUpdate] = useState(0);
 
   const incrementVote = () => {
@@ -23,7 +22,6 @@ const ArticleVote = ({ votes, id }) => {
       setVoteUpdate(0);
     });
   };
-  // ^ THIS NEEDS TO UPDATE DB SO VOTES PERSIST ON REFRESH //
 
   const incIsDisabled = voteUpdate > 0;
   const decIsDisabled = voteUpdate < 0;

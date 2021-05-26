@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
 import { convertTime } from '../utils/utils';
+import SortOrderSelector from './SortOrderSelector';
 
 const Articles = ({ topics }) => {
   const [articles, setArticles] = useState([]);
@@ -18,8 +19,9 @@ const Articles = ({ topics }) => {
   return (
     <div>
       <h2>{params.topic ? `Welcome to shm/${params.topic}!` : ''}</h2>
-      <div className="articles">
-        <ul>
+      <div>
+        <SortOrderSelector />
+        <ul className="articles">
           {articles.map((article) => {
             return (
               <li key={article.article_id} className="article-card">
@@ -28,6 +30,7 @@ const Articles = ({ topics }) => {
                   <p>Posted by: {article.author}</p>
                   <p>Posted on: {convertTime(article.created_at)}</p>
                   <h3 className="article-title">{article.title}</h3>
+                  <p>Votes: {article.votes}</p>
                 </Link>
               </li>
             );
