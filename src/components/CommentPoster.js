@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { UserContext } from '../contexts/user';
 import { postComment } from '../utils/api';
 
 const CommentPoster = ({ setComments, id }) => {
   const [newComment, setNewComment] = useState('');
+  const { user } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(newComment);
-    postComment(id, newComment)
+    postComment(id, user, newComment)
       .then((postedComment) => {
         setComments((currComments) => {
           return [postedComment.comment[0], ...currComments];

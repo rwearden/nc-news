@@ -39,9 +39,9 @@ export const patchArticleVote = async (articleId, num) => {
 };
 
 ////////// POST REQUESTS //////////
-export const postComment = async (articleId, body) => {
+export const postComment = async (articleId, user, body) => {
   const { data } = await newsApi.post(`/articles/${articleId}/comments`, {
-    username: 'jessjelly',
+    username: user,
     body: body
   });
   return data;
