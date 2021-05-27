@@ -2,7 +2,6 @@ import { Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getArticles } from '../utils/api';
-import { convertTime } from '../utils/utils';
 import ArticleCard from './ArticleCard';
 import OrderSelector from './OrderSelector';
 import SortBySelector from './SortBySelector';

@@ -1,8 +1,6 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-
 import Articles from './components/Articles';
-import Nav from './components/Nav';
 import SingleArticle from './components/SingleArticle';
 import { useState } from 'react';
 import { UserContext } from './contexts/user';

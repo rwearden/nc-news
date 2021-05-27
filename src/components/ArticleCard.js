@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
                 Posted by: {article.author}
               </Typography>
               <Typography variant="caption">
-                Posted on: {article.created_at}
+                Posted on: {convertTime(article.created_at)}
               </Typography>
               <Divider />
               <Typography variant="h6">{article.title}</Typography>

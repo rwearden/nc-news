@@ -11,19 +11,22 @@ const Nav = ({ topics, setTopics }) => {
   }, [setTopics]);
   // ^^^ WHY ADD THIS ? ^^^
   return (
-    // <Container>
-    <div>
-      <nav className="nav-bar">
-        {topics.map((topic) => {
-          return (
-            <Link key={topic.description} to={`/articles/topics/${topic.slug}`}>
-              shm/{topic.slug}
-            </Link>
-          );
-        })}
-      </nav>
-    </div>
-    // </Container>
+    <Container>
+      <div>
+        <nav className="nav-bar">
+          {topics.map((topic) => {
+            return (
+              <Link
+                key={topic.description}
+                to={`/articles/topics/${topic.slug}`}
+              >
+                shm/{topic.slug}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </Container>
   );
 };
 

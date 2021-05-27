@@ -28,7 +28,9 @@ const Comments = ({ id }) => {
             <Card key={comment.comment_id}>
               <CardContent>
                 <Typography variant="caption">{comment.author}</Typography>
-                <Typography variant="caption">{comment.created_at}</Typography>
+                <Typography variant="caption">
+                  {convertTime(comment.created_at)}
+                </Typography>
                 <Typography>{comment.body}</Typography>
                 <div className="votes">
                   <Typography>Votes: {comment.votes}</Typography>

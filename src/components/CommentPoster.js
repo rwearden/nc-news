@@ -8,7 +8,6 @@ const CommentPoster = ({ setComments, id }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(newComment);
     postComment(id, user, newComment)
       .then((postedComment) => {
         setComments((currComments) => {

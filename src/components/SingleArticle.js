@@ -21,30 +21,34 @@ const SingleArticle = () => {
 
   return (
     <div className="articles-page">
-      <div>
-        <Card>
-          <CardContent className="single-article-card-content">
-            <Typography variant="caption">smh/{article[0].topic}</Typography>
-            <Typography variant="caption">
-              Posted by: {article[0].author}
-            </Typography>
-            <Typography variant="caption">
-              Posted on: {article[0].created_at}
-            </Typography>
-            {/* WONT LET ME CONVERT THIS  TIME ^^^ */}
-            <Typography variant="h5" className="article-title">
-              {article[0].title}
-            </Typography>
-            <Typography>{article[0].body}</Typography>
-            <div className="votes">
-              <ArticleVoter
-                votes={article[0].votes}
-                id={article[0].article_id}
-              />
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      {isLoading ? (
+        <p>...loading</p>
+      ) : (
+        <div>
+          <Card>
+            <CardContent className="single-article-card-content">
+              <Typography variant="caption">smh/{article[0].topic}</Typography>
+              <Typography variant="caption">
+                Posted by: {article[0].author}
+              </Typography>
+              <Typography variant="caption">
+                Posted on: {convertTime(article[0].created_at)}
+              </Typography>
+              {/* WONT LET ME CONVERT THIS  TIME ^^^ */}
+              <Typography variant="h5" className="article-title">
+                {article[0].title}
+              </Typography>
+              <Typography>{article[0].body}</Typography>
+              <div className="votes">
+                <ArticleVoter
+                  votes={article[0].votes}
+                  id={article[0].article_id}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
       <div>
         {isLoading ? (
           <p>...loading</p>
