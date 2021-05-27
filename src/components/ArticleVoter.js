@@ -4,7 +4,7 @@ import { ThumbUp, ThumbDown } from '@material-ui/icons';
 
 import { patchArticleVote } from '../utils/api';
 
-const ArticleVote = ({ votes, id }) => {
+const ArticleVoter = ({ votes, id }) => {
   const [voteUpdate, setVoteUpdate] = useState(0);
 
   const incrementVote = () => {
@@ -43,4 +43,4 @@ const ArticleVote = ({ votes, id }) => {
   );
 };
 
-export default ArticleVote;
+export default ArticleVoter;

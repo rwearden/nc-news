@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { convertTime } from '../utils/utils';
 import { Card, CardContent, Typography, Divider } from '@material-ui/core';
-import { ThumbUp } from '@material-ui/icons';
 
 const ArticleCard = ({ article }) => {
   return (
@@ -16,11 +15,10 @@ const ArticleCard = ({ article }) => {
                 Posted by: {article.author}
               </Typography>
               <Typography variant="caption">
-                Posted on: {convertTime(article.created_at)}
+                Posted on: {article.created_at}
               </Typography>
               <Divider />
               <Typography variant="h6">{article.title}</Typography>
-              {/* <Divider /> */}
               <Typography variant="caption">Votes: {article.votes}</Typography>
             </div>
           </CardContent>

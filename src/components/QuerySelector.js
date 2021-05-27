@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { getArticles } from '../utils/api';
 import { Select, MenuItem, InputLabel } from '@material-ui/core';
 
-const SortOrderSelector = () => {
-  const [sortBy, setSortBy] = useState('');
+const QuerySelector = () => {
+  const [sortBy, setSortBy] = useState('created_at');
   const handleSortBy = (event) => {
     setSortBy(event.target.value);
+    getArticles(sortBy);
     console.log(sortBy);
   };
   return (
@@ -25,4 +27,4 @@ const SortOrderSelector = () => {
   );
 };
 
-export default SortOrderSelector;
+export default QuerySelector;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getSingleArticle } from '../utils/api';
-import ArticleVote from './ArticleVote';
+import ArticleVoter from './ArticleVoter';
 import Comments from './Comments';
 import { convertTime } from '../utils/utils';
 import { Card, CardContent, Typography } from '@material-ui/core';
@@ -37,7 +37,7 @@ const SingleArticle = () => {
             </Typography>
             <Typography>{article[0].body}</Typography>
             <div className="votes">
-              <ArticleVote
+              <ArticleVoter
                 votes={article[0].votes}
                 id={article[0].article_id}
               />
@@ -55,28 +55,5 @@ const SingleArticle = () => {
     </div>
   );
 };
-
-/* <div key={article.article_id} className="article-card">
-      <Link to={`/articles/${article.article_id}`}>
-        <Card variant="outlined">
-          <CardContent>
-            <div className="article-card-content">
-              <Typography variant="caption">smh/{article.topic}</Typography>
-              <Typography variant="caption">
-                Posted by: {article.author}
-              </Typography>
-              <Typography variant="caption">
-                Posted on: {convertTime(article.created_at)}
-              </Typography>
-              <Divider />
-              <Typography variant="h6">{article.title}</Typography>
-              {/* <Divider /> */
-
-// <Typography variant="caption">Votes: {article.votes}</Typography>
-//         </div>
-//       </CardContent>
-//     </Card>
-//   </Link>
-// </div> */}
 
 export default SingleArticle;

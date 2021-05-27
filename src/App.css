@@ -13,17 +13,15 @@ li {
 
 .shmeddit-logo {
   border-radius: 100em;
-  width: 5em;
+  width: 4em;
+}
+.logo-container {
+  width: 100%;
+  display: flex;
 }
 
 .title-banner {
   background-color: #e78d70;
-}
-
-.logo-container {
-  width: 100%;
-  display: flex;
-  margin: 20px;
 }
 
 .nav-bar {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import shmedditLogo from '../img/shmeddit.jpeg';
 import Container from '@material-ui/core/Container';
+import { Typography } from '@material-ui/core';
 
 const Header = () => {
   return (
@@ -16,7 +17,9 @@ const Header = () => {
             />
           </div>
         </Link>
-        <h1>Shmeddit: the 3th page of the internet</h1>
+        <Typography variant="h6">
+          Shmeddit: the 3th page of the internet
+        </Typography>
       </div>
     </Container>
   );

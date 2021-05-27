@@ -1,33 +1,80 @@
 import { Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
 import { convertTime } from '../utils/utils';
 import ArticleCard from './ArticleCard';
-import SortOrderSelector from './SortOrderSelector';
+import QuerySelector from './QuerySelector';
 
 const Articles = ({ topics }) => {
   const [articles, setArticles] = useState([]);
   const params = useParams();
-  // console.log(topics);
+  const { topic } = params;
+  const [order, setOrder] = useState('ASC');
+  const [sortBy, setSortBy] = useState('created_at');
 
   useEffect(() => {
-    getArticles(params.topic).then((articlesFromApi) => {
+    getArticles({ topic, order, sortBy }).then((articlesFromApi) => {
       setArticles(articlesFromApi);
     });
-  }, [params.topic]);
+  }, [topic, order, sortBy]);
 
   return (
     <div>
       <Typography variant="h5">
-        {params.topic ? `Welcome to shm/${params.topic}!` : ''}
+        {topic ? `Welcome to shm/${topic}!` : ''}
       </Typography>
+      {/* //////////////////////////////////////////////////////////////////////////////////////// */}
       <div>
-        <SortOrderSelector />
+        <button
+          onClick={() => {
+            setOrder('ASC');
+          }}
+        >
+          Ascending
+        </button>
+        <button
+          onClick={() => {
+            setOrder('DESC');
+          }}
+        >
+          Descending
+        </button>
+      </div>
+
+      {/* ///////////////////////////////////////////////////////////////////////////// */}
+
+      <div>
+        <button
+          onClick={() => {
+            setSortBy('created_at');
+          }}
+        >
+          Date
+        </button>
+        {/* <button
+          onClick={() => {
+            setSortBy('comment_count');
+          }}
+        >
+          Comments
+        </button> */}
+        <button
+          onClick={() => {
+            setSortBy('votes');
+          }}
+        >
+          Votes
+        </button>
+      </div>
+
+      {/* ///////////////////////////////////////////////////////////////////////////// */}
+
+      <div>
+        {/* <QuerySelector /> */}
         <ul className="articles">
           {articles.map((article) => {
-            return <ArticleCard article={article} />;
+            return <ArticleCard key={article.article_id} article={article} />;
           })}
         </ul>
       </div>
