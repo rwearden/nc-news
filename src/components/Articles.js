@@ -5,7 +5,6 @@ import { getArticles } from '../utils/api';
 import { convertTime } from '../utils/utils';
 import ArticleCard from './ArticleCard';
 import OrderSelector from './OrderSelector';
-import QuerySelector from './QuerySelector';
 import SortBySelector from './SortBySelector';
 
 const Articles = ({ topics }) => {
@@ -26,11 +25,10 @@ const Articles = ({ topics }) => {
       <Typography variant="h5">
         {topic ? `Welcome to shm/${topic}!` : ''}
       </Typography>
-      <OrderSelector setOrder={setOrder} />
-      <SortBySelector setSortBy={setSortBy} />
-      {/* ////////////////////////////////////////////////////////////// */}
-      <QuerySelector sortBy={sortBy} setSortBy={setSortBy} />
-      {/* ///////////////////////////////////////////////////////////////////// */}
+      <div className="query-selectors">
+        <SortBySelector sortBy={sortBy} setSortBy={setSortBy} />
+        <OrderSelector order={order} setOrder={setOrder} />
+      </div>
       <div>
         <ul className="articles">
           {articles.map((article) => {

@@ -67,6 +67,12 @@ li {
   flex-direction: column;
   margin: 1em;
 }
+.query-selectors {
+  display: inline-flex;
+}
+.query-selector {
+  margin: 1em;
+}
 
 .article-body-card {
   text-align: left;

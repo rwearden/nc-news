@@ -1,29 +1,24 @@
-import React from 'react';
+import { Select, MenuItem, InputLabel } from '@material-ui/core';
 
-const SortBySelector = ({ setSortBy }) => {
+const SortBySelector = ({ sortBy, setSortBy }) => {
+  const handleSortBy = (event) => {
+    setSortBy(event.target.value);
+    // getArticles(sortBy);
+  };
   return (
-    <div>
-      <button
-        onClick={() => {
-          setSortBy('created_at');
-        }}
+    <div className="query-selector">
+      <InputLabel id="label">Sort By</InputLabel>
+      <Select
+        labelId="label"
+        id="select"
+        value={sortBy}
+        displayEmpty
+        onChange={handleSortBy}
       >
-        Date
-      </button>
-      {/* <button
-          onClick={() => {
-            setSortBy('comment_count');
-          }}
-        >
-          Comments
-        </button> */}
-      <button
-        onClick={() => {
-          setSortBy('votes');
-        }}
-      >
-        Votes
-      </button>
+        <MenuItem value="created_at">Date</MenuItem>
+        {/* <MenuItem value="comment_count">Comments</MenuItem> */}
+        <MenuItem value="votes">Votes</MenuItem>
+      </Select>
     </div>
   );
 };

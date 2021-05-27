@@ -1,22 +1,23 @@
-import React from 'react';
+import { Select, MenuItem, InputLabel } from '@material-ui/core';
 
-const OrderSelector = ({ setOrder }) => {
+const OrderSelector = ({ order, setOrder }) => {
+  const handleOrder = (event) => {
+    setOrder(event.target.value);
+  };
   return (
-    <div>
-      <button
-        onClick={() => {
-          setOrder('ASC');
-        }}
+    <div className="query-selector">
+      <InputLabel id="label">Order</InputLabel>
+      <Select
+        labelId="label"
+        id="select"
+        value={order}
+        displayEmpty
+        onChange={handleOrder}
       >
-        Ascending
-      </button>
-      <button
-        onClick={() => {
-          setOrder('DESC');
-        }}
-      >
-        Descending
-      </button>
+        <MenuItem value="ASC">Ascdening</MenuItem>
+        {/* <MenuItem value="comment_count">Comments</MenuItem> */}
+        <MenuItem value="DESC">Descending</MenuItem>
+      </Select>
     </div>
   );
 };
