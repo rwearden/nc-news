@@ -22,7 +22,7 @@ const CommentPoster = ({ setComments, id }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="comment-poster">
         <label htmlFor="postComment">Leave a comment: </label>
         <input
           required

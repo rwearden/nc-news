@@ -21,7 +21,7 @@ const Articles = ({ topics }) => {
   }, [topic, order, sortBy]);
 
   return (
-    <div>
+    <div className="articles-page">
       <Typography variant="h5">
         {topic ? `Welcome to shm/${topic}!` : ''}
       </Typography>

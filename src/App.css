@@ -13,7 +13,7 @@ li {
 
 .shmeddit-logo {
   border-radius: 100em;
-  width: 4em;
+  width: 3em;
 }
 .logo-container {
   width: 100%;
@@ -28,6 +28,9 @@ li {
   background-color: #6f83c3;
   padding: 1em;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
 }
 
 .nav-bar a {
@@ -108,6 +111,10 @@ li {
   padding-top: 0.5em;
 }
 
+.articles-page {
+  margin-top: 2em;
+}
+
 .MuiTypography-h5 {
   text-align: center;
   padding-top: 0.5em;
@@ -117,4 +124,8 @@ li {
   overflow: hidden;
   margin: 1em;
   text-align: left;
+}
+
+.comment-poster {
+  margin: 1em;
 }

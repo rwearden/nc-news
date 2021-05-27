@@ -20,7 +20,7 @@ const SingleArticle = () => {
   }, [params.article_id]);
 
   return (
-    <div>
+    <div className="articles-page">
       <div>
         <Card>
           <CardContent className="single-article-card-content">

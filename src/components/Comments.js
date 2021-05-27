@@ -8,16 +8,13 @@ import { convertTime } from '../utils/utils';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 const Comments = ({ id }) => {
-  // console.log(id);
   const [comments, setComments] = useState([]);
   const params = useParams();
 
   useEffect(() => {
     getCommentsByArticle(params.article_id).then((commentsFromApi) => {
-      // const reversedComments = commentsFromApi.sort((comment)=>{
-      //   comment.created_at
-      // })
       setComments(commentsFromApi.reverse());
+      // DONT THINK THIS IS VERY GOOD ^^^
     });
   }, [params.article_id]);
 
@@ -46,28 +43,5 @@ const Comments = ({ id }) => {
     </div>
   );
 };
-
-/* <div key={article.article_id} className="article-card">
-      <Link to={`/articles/${article.article_id}`}>
-        <Card variant="outlined">
-          <CardContent>
-            <div className="article-card-content">
-              <Typography variant="caption">smh/{article.topic}</Typography>
-              <Typography variant="caption">
-                Posted by: {article.author}
-              </Typography>
-              <Typography variant="caption">
-                Posted on: {convertTime(article.created_at)}
-              </Typography>
-              <Divider />
-              <Typography variant="h6">{article.title}</Typography>
-              {/* <Divider /> */
-
-// <Typography variant="caption">Votes: {article.votes}</Typography>
-//         </div>
-//       </CardContent>
-//     </Card>
-//   </Link>
-// </div> */}
 
 export default Comments;
