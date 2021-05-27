@@ -13,10 +13,12 @@ const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getSingleArticle(params.article_id).then((articleFromApi) => {
-      setArticle(articleFromApi);
-      setIsLoading(false);
-    });
+    getSingleArticle(params.article_id)
+      .then((articleFromApi) => {
+        setArticle(articleFromApi);
+        setIsLoading(false);
+      })
+      .catch(() => {});
   }, [params.article_id]);
 
   return (

@@ -25,19 +25,21 @@ li {
 }
 
 .nav-bar {
-  background-color: #6f83c3;
-  padding: 1em;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  padding-right: 0;
+  padding-left: 1em;
+}
+
+.sub-shmeddit-link {
+  font-size: 0.5em;
 }
 
 .nav-bar a {
   float: left;
   color: white;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 0.8em;
   width: 33%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
 }
 
@@ -54,9 +56,6 @@ li {
   margin-bottom: 1em;
 }
 
-.article-card {
-  margin: 20px;
-}
 .article-card a {
   text-decoration: none;
 }
@@ -127,6 +126,16 @@ li {
   text-align: left;
 }
 
+.banner {
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
 .comment-poster {
   margin: 1em;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
 }

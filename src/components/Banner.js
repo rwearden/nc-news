@@ -40,12 +40,7 @@ const Banner = ({ topics, setTopics }) => {
   }, [setTopics]);
   return (
     <React.Fragment>
-      <AppBar
-        color={isCustomColor || isCustomHeight ? 'primary' : example}
-        className={`${isCustomColor && classes.customColor} ${
-          isCustomHeight && classes.customHeight
-        }`}
-      >
+      <AppBar color="primary" className="banner">
         <Toolbar>
           <Link to="/">
             <div className="logo-container">
@@ -64,6 +59,7 @@ const Banner = ({ topics, setTopics }) => {
               {topics.map((topic) => {
                 return (
                   <Link
+                    className="sub-shmeddit-link"
                     key={topic.description}
                     to={`/articles/topics/${topic.slug}`}
                   >

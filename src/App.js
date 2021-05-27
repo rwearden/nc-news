@@ -15,6 +15,7 @@ function App() {
         <Banner topics={topics} setTopics={setTopics} />
         {/* <Nav topics={topics} setTopics={setTopics} /> */}
         <Switch>
+          {/* <Route></Route> */}
           <Route exact path={'/'}>
             <Articles />
           </Route>

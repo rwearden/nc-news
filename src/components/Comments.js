@@ -14,7 +14,7 @@ const Comments = ({ id }) => {
   useEffect(() => {
     getCommentsByArticle(params.article_id).then((commentsFromApi) => {
       setComments(commentsFromApi.reverse());
-      // DONT THINK THIS IS VERY GOOD ^^^
+      // ^^^ ONLY DOING THIS FOR NOW AS DONT HAVE QUERIES SET UP IN BACKEND ^^^
     });
   }, [params.article_id]);
 
@@ -26,7 +26,7 @@ const Comments = ({ id }) => {
         {comments.map((comment) => {
           return (
             <Card key={comment.comment_id}>
-              <CardContent>
+              <CardContent className="card-content">
                 <Typography variant="caption">{comment.author}</Typography>
                 <Typography variant="caption">
                   {convertTime(comment.created_at)}
