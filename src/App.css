@@ -20,6 +20,12 @@ li {
   background-color: #e78d70;
 }
 
+.logo-container {
+  width: 100%;
+  display: flex;
+  margin: 20px;
+}
+
 .nav-bar {
   background-color: #6f83c3;
   padding: 1em;
@@ -47,15 +53,21 @@ li {
 }
 
 .article-card {
-  border-style: solid;
-  list-style-type: none;
-  border-width: 2px;
-  border-color: rgb(48, 48, 48);
-  border-radius: 0.3em;
-  margin: 0 2em 2em;
+  margin: 20px;
 }
 .article-card a {
   text-decoration: none;
+}
+
+.article-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.single-article-card-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
 }
 
 .article-body-card {
@@ -85,4 +97,20 @@ li {
 }
 .votes {
   text-align: center;
+}
+
+.MuiTypography-h6 {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.MuiTypography-h5 {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.MuiCard-root {
+  overflow: hidden;
+  margin: 1em;
+  text-align: left;
 }

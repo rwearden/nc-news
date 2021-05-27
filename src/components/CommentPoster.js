@@ -14,19 +14,15 @@ const CommentPoster = ({ setComments, id }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(newComment);
-    setComments((currComments) => {
-      const templateComment = {
-        author: 'jessjelly',
-        created_at: 'Just now',
-        body: newComment,
-        comment_id: newComment
-      };
-
-      return [templateComment, ...currComments];
-    });
-    postComment(id, newComment).catch(() => {
-      setNewComment('');
-    });
+    postComment(id, newComment)
+      .then((response) => {
+        setComments((currComments) => {
+          return [response.comment[0], ...currComments];
+        });
+      })
+      .catch(() => {
+        setNewComment('');
+      });
   };
 
   return (

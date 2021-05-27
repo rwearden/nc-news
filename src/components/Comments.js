@@ -14,7 +14,10 @@ const Comments = ({ id }) => {
 
   useEffect(() => {
     getCommentsByArticle(params.article_id).then((commentsFromApi) => {
-      setComments(commentsFromApi);
+      // const reversedComments = commentsFromApi.sort((comment)=>{
+      //   comment.created_at
+      // })
+      setComments(commentsFromApi.reverse());
     });
   }, [params.article_id]);
 

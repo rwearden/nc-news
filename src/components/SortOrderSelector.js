@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select, MenuItem } from '@material-ui/core';
+import { Select, MenuItem, InputLabel } from '@material-ui/core';
 
 const SortOrderSelector = () => {
   const [sortBy, setSortBy] = useState('');
@@ -9,8 +9,14 @@ const SortOrderSelector = () => {
   };
   return (
     <div>
-      <Select id="select" value={sortBy} displayEmpty onChange={handleSortBy}>
-        <MenuItem value="">Sort By</MenuItem>
+      <InputLabel id="label">Sort By</InputLabel>
+      <Select
+        labelId="label"
+        id="select"
+        value={sortBy}
+        displayEmpty
+        onChange={handleSortBy}
+      >
         <MenuItem value="created_at">Date</MenuItem>
         <MenuItem value="comment_count">Comments</MenuItem>
         <MenuItem value="votes">Votes</MenuItem>

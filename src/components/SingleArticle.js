@@ -4,6 +4,7 @@ import { getSingleArticle } from '../utils/api';
 import ArticleVote from './ArticleVote';
 import Comments from './Comments';
 import { convertTime } from '../utils/utils';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 const SingleArticle = () => {
   const [article, setArticle] = useState([[]]);
@@ -20,16 +21,29 @@ const SingleArticle = () => {
 
   return (
     <div>
-      <div className="article-body-card">
-        <p>smh/{article[0].topic}</p>
-        <p>Posted by: {article[0].author}</p>
-        <p>Posted on: {article[0].created_at}</p>
-        {/* WONT LET ME CONVERT THIS  TIME ^^^ */}
-        <h2 className="article-title">{article[0].title}</h2>
-        <p>{article[0].body}</p>
-        <div className="votes">
-          <ArticleVote votes={article[0].votes} id={article[0].article_id} />
-        </div>
+      <div>
+        <Card>
+          <CardContent className="single-article-card-content">
+            <Typography variant="caption">smh/{article[0].topic}</Typography>
+            <Typography variant="caption">
+              Posted by: {article[0].author}
+            </Typography>
+            <Typography variant="caption">
+              Posted on: {article[0].created_at}
+            </Typography>
+            {/* WONT LET ME CONVERT THIS  TIME ^^^ */}
+            <Typography variant="h5" className="article-title">
+              {article[0].title}
+            </Typography>
+            <Typography>{article[0].body}</Typography>
+            <div className="votes">
+              <ArticleVote
+                votes={article[0].votes}
+                id={article[0].article_id}
+              />
+            </div>
+          </CardContent>
+        </Card>
       </div>
       <div>
         {isLoading ? (
@@ -41,5 +55,28 @@ const SingleArticle = () => {
     </div>
   );
 };
+
+/* <div key={article.article_id} className="article-card">
+      <Link to={`/articles/${article.article_id}`}>
+        <Card variant="outlined">
+          <CardContent>
+            <div className="article-card-content">
+              <Typography variant="caption">smh/{article.topic}</Typography>
+              <Typography variant="caption">
+                Posted by: {article.author}
+              </Typography>
+              <Typography variant="caption">
+                Posted on: {convertTime(article.created_at)}
+              </Typography>
+              <Divider />
+              <Typography variant="h6">{article.title}</Typography>
+              {/* <Divider /> */
+
+// <Typography variant="caption">Votes: {article.votes}</Typography>
+//         </div>
+//       </CardContent>
+//     </Card>
+//   </Link>
+// </div> */}
 
 export default SingleArticle;

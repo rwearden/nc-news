@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import UpIcon from '@material-ui/icons/ArrowUpward';
-import DownIcon from '@material-ui/icons/ArrowDownward';
+import { ThumbUp, ThumbDown } from '@material-ui/icons';
+
 import { patchArticleVote } from '../utils/api';
 
 const ArticleVote = ({ votes, id }) => {
@@ -31,12 +31,12 @@ const ArticleVote = ({ votes, id }) => {
       <p>Votes: {votes + voteUpdate}</p>
       <Button
         disabled={incIsDisabled}
-        startIcon={<UpIcon />}
+        startIcon={<ThumbUp />}
         onClick={incrementVote}
       ></Button>
       <Button
         disabled={decIsDisabled}
-        startIcon={<DownIcon />}
+        startIcon={<ThumbDown />}
         onClick={decrementVote}
       ></Button>
     </div>
