@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import { getArticles } from '../utils/api';
 import { Select, MenuItem, InputLabel } from '@material-ui/core';
 
-const QuerySelector = () => {
-  const [sortBy, setSortBy] = useState('created_at');
+const QuerySelector = ({ sortBy, setSortBy }) => {
   const handleSortBy = (event) => {
     setSortBy(event.target.value);
-    getArticles(sortBy);
-    console.log(sortBy);
+    // getArticles(sortBy);
   };
   return (
     <div>
@@ -20,7 +16,7 @@ const QuerySelector = () => {
         onChange={handleSortBy}
       >
         <MenuItem value="created_at">Date</MenuItem>
-        <MenuItem value="comment_count">Comments</MenuItem>
+        {/* <MenuItem value="comment_count">Comments</MenuItem> */}
         <MenuItem value="votes">Votes</MenuItem>
       </Select>
     </div>

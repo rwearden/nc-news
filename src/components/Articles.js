@@ -4,7 +4,9 @@ import { useParams } from 'react-router';
 import { getArticles } from '../utils/api';
 import { convertTime } from '../utils/utils';
 import ArticleCard from './ArticleCard';
+import OrderSelector from './OrderSelector';
 import QuerySelector from './QuerySelector';
+import SortBySelector from './SortBySelector';
 
 const Articles = ({ topics }) => {
   const [articles, setArticles] = useState([]);
@@ -24,54 +26,12 @@ const Articles = ({ topics }) => {
       <Typography variant="h5">
         {topic ? `Welcome to shm/${topic}!` : ''}
       </Typography>
-      {/* //////////////////////////////////////////////////////////////////////////////////////// */}
+      <OrderSelector setOrder={setOrder} />
+      <SortBySelector setSortBy={setSortBy} />
+      {/* ////////////////////////////////////////////////////////////// */}
+      <QuerySelector sortBy={sortBy} setSortBy={setSortBy} />
+      {/* ///////////////////////////////////////////////////////////////////// */}
       <div>
-        <button
-          onClick={() => {
-            setOrder('ASC');
-          }}
-        >
-          Ascending
-        </button>
-        <button
-          onClick={() => {
-            setOrder('DESC');
-          }}
-        >
-          Descending
-        </button>
-      </div>
-
-      {/* ///////////////////////////////////////////////////////////////////////////// */}
-
-      <div>
-        <button
-          onClick={() => {
-            setSortBy('created_at');
-          }}
-        >
-          Date
-        </button>
-        {/* <button
-          onClick={() => {
-            setSortBy('comment_count');
-          }}
-        >
-          Comments
-        </button> */}
-        <button
-          onClick={() => {
-            setSortBy('votes');
-          }}
-        >
-          Votes
-        </button>
-      </div>
-
-      {/* ///////////////////////////////////////////////////////////////////////////// */}
-
-      <div>
-        {/* <QuerySelector /> */}
         <ul className="articles">
           {articles.map((article) => {
             return <ArticleCard key={article.article_id} article={article} />;
