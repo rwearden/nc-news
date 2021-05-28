@@ -5,17 +5,20 @@ import SingleArticle from './components/SingleArticle';
 import { useState } from 'react';
 import { UserContext } from './contexts/user';
 import Banner from './components/Banner';
+import BadTopicsRequest from './components/BadTopicsRequest';
 
 function App() {
   const [user, setUser] = useState('jessjelly');
   const [topics, setTopics] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const willMatchTopics = ['football', 'coding', 'cooking'];
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <Banner topics={topics} setTopics={setTopics} />
         {/* <Nav topics={topics} setTopics={setTopics} /> */}
         <Switch>
-          {/* <Route></Route> */}
           <Route exact path={'/'}>
             <Articles />
           </Route>
@@ -25,6 +28,9 @@ function App() {
           <Route exact path={'/articles/:article_id'}>
             <SingleArticle />
           </Route>
+          {/* <Route exact path={`articles/topics/${willNotMatch}`}>
+            <BadTopicsRequest />
+          </Route> */}
         </Switch>
       </div>
     </UserContext.Provider>

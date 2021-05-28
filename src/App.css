@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+
 h1 {
   margin-bottom: 0;
   padding-bottom: 1em;
@@ -33,6 +34,11 @@ li {
 
 .sub-shmeddit-link {
   font-size: 0.5em;
+}
+
+.subshmeddit-title {
+  margin-top: 1em;
+  /* WHY NO WORK?! */
 }
 
 .nav-bar a {
@@ -112,7 +118,7 @@ li {
 }
 
 .articles-page {
-  margin-top: 2em;
+  background-color: #eaeaea57;
 }
 
 .MuiTypography-h5 {
@@ -138,4 +144,20 @@ li {
 .card-content {
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .articles {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: ;
+  }
+  .App {
+    text-align: center;
+    margin: 0% 10% 0% 10%;
+  }
+  .shmeddit-logo {
+    border-radius: 100em;
+    width: 4em;
+  }
 }

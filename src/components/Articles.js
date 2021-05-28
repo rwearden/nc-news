@@ -21,7 +21,7 @@ const Articles = ({ topics }) => {
 
   return (
     <div className="articles-page">
-      <Typography variant="h5">
+      <Typography className="subshmeddit-title" variant="h5">
         {topic ? `Welcome to shm/${topic}!` : ''}
       </Typography>
       <div className="query-selectors">
