@@ -20,7 +20,7 @@
 - [✓] Responsive design: @600px wide, the article cards become very narrow
 - [✓] Responsive design: Below 600px wide, the nav text wraps and makes the nav cover the title
 - [✓] Clear the comment input once comment has successfully been posted
-- [ ] Plain button looks a bit out of place with all the lovely Material UI styles going on
+- [?] Plain button looks a bit out of place with all the lovely Material UI styles going on
 - [ ] Posts / Deletions give user indication of loading (can be done by disabling button & styling)
 - [✓?] Make sure vote buttons are accessible for people using screen readers - ADDED ALT PROP TO BUTTONS
 - [?] Sometimes two loading indicators appear at once
@@ -52,7 +52,7 @@
 
 ​
 
-- [ ] Bad url - show not found page (check `react-router` docs for ways to do this)
+- [ HAVE ERROR HANDLER IN EACH ARTICLES COMPONENT ] Bad url - show not found page (check `react-router` docs for ways to do this)
 - [ ] Bad topic slug in url - display error to user
 - [ ] Bad article id in url - display error to user
       ​
@@ -61,7 +61,7 @@
 
 ​
 
-- [ ] Delete any unused variables (e.g. willMatchTopics)
+- [✓] Delete any unused variables (e.g. willMatchTopics)
 - [ ] Seems like topics could be stored lower down the component tree?
 - [ ] Handle errors in individual components, rather than at top level
 - [ ] Get rid of any linting warnings from terminal
@@ -75,7 +75,7 @@ path="/articles/topics/:topic"
 
 ​
 
-- [?] I recommend changing the routing slightly to represent the hierarchy of things. You could even use `/smh/cooking` etc.
+- [✓] I recommend changing the routing slightly to represent the hierarchy of things. You could even use `/smh/cooking` etc.
 - [✓] Can destructure on one line if you don't need a full object:
   ​
 
@@ -89,9 +89,9 @@ const { topic } = useParams();
 ​
 
 - [ ] `/articles/:id` on back end is giving you an array, which you have to work around on the front end. Best to fix this if possible.
-- [ ] Remove `console.log`s / comments
-- [ ] remove unnecessary files (e.g. old logo.svg)
-      ​
+- [✓] Remove `console.log`s / comments
+- [✓] remove unnecessary files (e.g. old logo.svg)
+  ​
 
 ## MAKE SURE ALL TESTS ARE STILL PASSING IN BACK END
 

@@ -15,7 +15,7 @@ const OrderSelector = ({ order, setOrder }) => {
         onChange={handleOrder}
       >
         <MenuItem value="ASC">Ascending</MenuItem>
-        {/* <MenuItem value="comment_count">Comments</MenuItem> */}
+
         <MenuItem value="DESC">Descending</MenuItem>
       </Select>
     </div>

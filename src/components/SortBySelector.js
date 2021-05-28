@@ -3,7 +3,6 @@ import { Select, MenuItem, InputLabel } from '@material-ui/core';
 const SortBySelector = ({ sortBy, setSortBy }) => {
   const handleSortBy = (event) => {
     setSortBy(event.target.value);
-    // getArticles(sortBy);
   };
   return (
     <div className="query-selector">
@@ -16,7 +15,6 @@ const SortBySelector = ({ sortBy, setSortBy }) => {
         onChange={handleSortBy}
       >
         <MenuItem value="created_at">Date</MenuItem>
-        {/* <MenuItem value="comment_count">Comments</MenuItem> */}
         <MenuItem value="votes">Votes</MenuItem>
       </Select>
     </div>

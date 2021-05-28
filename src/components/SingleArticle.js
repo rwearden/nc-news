@@ -44,7 +44,6 @@ const SingleArticle = () => {
               <Typography variant="caption">
                 Posted on: {convertTime(article[0].created_at)}
               </Typography>
-              {/* WONT LET ME CONVERT THIS  TIME ^^^ */}
               <Typography variant="h5" className="article-title">
                 {article[0].title}
               </Typography>
