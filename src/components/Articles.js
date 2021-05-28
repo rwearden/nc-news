@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { ErrorContext } from '../contexts/error';
 import { getArticles } from '../utils/api';
 import ArticleCard from './ArticleCard';
 import OrderSelector from './OrderSelector';
@@ -12,11 +13,16 @@ const Articles = ({ topics }) => {
   const { topic } = params;
   const [order, setOrder] = useState('ASC');
   const [sortBy, setSortBy] = useState('created_at');
+  const { setHasError } = useContext(ErrorContext);
 
   useEffect(() => {
-    getArticles({ topic, order, sortBy }).then((articlesFromApi) => {
-      setArticles(articlesFromApi);
-    });
+    getArticles({ topic, order, sortBy })
+      .then((articlesFromApi) => {
+        setArticles(articlesFromApi);
+      })
+      .catch(() => {
+        setHasError(true);
+      });
   }, [topic, order, sortBy]);
 
   return (

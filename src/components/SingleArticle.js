@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getSingleArticle } from '../utils/api';
 import ArticleVoter from './ArticleVoter';
 import Comments from './Comments';
 import { convertTime } from '../utils/utils';
 import { Card, CardContent, Typography } from '@material-ui/core';
+import { ErrorContext } from '../contexts/error';
 
 const SingleArticle = () => {
   const [article, setArticle] = useState([[]]);
   const params = useParams();
-
   const [isLoading, setIsLoading] = useState(true);
+  const { setHasError } = useContext(ErrorContext);
 
   useEffect(() => {
-    getSingleArticle(params.article_id).then((articleFromApi) => {
-      setArticle(articleFromApi);
-      setIsLoading(false);
-    });
-    // .catch(() => {});
+    getSingleArticle(params.article_id)
+      .then((articleFromApi) => {
+        setArticle(articleFromApi);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setHasError(true);
+      });
   }, [params.article_id]);
 
   return (
