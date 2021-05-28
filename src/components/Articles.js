@@ -22,7 +22,7 @@ const Articles = ({ articles, setArticles }) => {
       .catch(() => {
         setHasError(true);
       });
-  }, [topic, order, sortBy]);
+  }, [topic, order, sortBy, setArticles, setHasError]);
 
   return (
     <div className="articles-page">

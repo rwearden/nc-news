@@ -27,7 +27,7 @@ const SingleArticle = () => {
       .catch(() => {
         setHasError(true);
       });
-  }, [article_id]);
+  }, [article_id, setHasError]);
 
   return (
     <div className="articles-page">

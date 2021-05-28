@@ -24,7 +24,7 @@
 - [ ] Posts / Deletions give user indication of loading (can be done by disabling button & styling)
 - [✓?] Make sure vote buttons are accessible for people using screen readers - ADDED ALT PROP TO BUTTONS
 - [?] Sometimes two loading indicators appear at once
-- [ ] Could you make a reuseable loading component that looks pretty? Maybe Material UI comes with one?
+- [✓] Could you make a reuseable loading component that looks pretty? Maybe Material UI comes with one?
 - [✓] Typo in order dropdown: "Ascdening" -> "Ascending"
   ​
 

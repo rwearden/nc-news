@@ -12,7 +12,6 @@ function App() {
   const [user, setUser] = useState('jessjelly');
   const [topics, setTopics] = useState([]);
   const [hasError, setHasError] = useState(false);
-  const willMatchTopics = ['football', 'coding', 'cooking'];
   const [articles, setArticles] = useState([]);
 
   return (
