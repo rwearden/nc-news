@@ -61,7 +61,7 @@ const Banner = ({ topics, setTopics }) => {
                   <Link
                     className="sub-shmeddit-link"
                     key={topic.description}
-                    to={`/articles/topics/${topic.slug}`}
+                    to={`/topics/${topic.slug}/articles`}
                   >
                     shm/{topic.slug}
                   </Link>

@@ -36,11 +36,6 @@ li {
   font-size: 0.5em;
 }
 
-.subshmeddit-title {
-  margin-top: 1em;
-  /* WHY NO WORK?! */
-}
-
 .nav-bar a {
   float: left;
   color: white;
@@ -119,6 +114,7 @@ li {
 
 .articles-page {
   background-color: #eaeaea57;
+  margin-top: 1.5em;
 }
 
 .MuiTypography-h5 {
@@ -146,7 +142,35 @@ li {
   flex-direction: column;
 }
 
+.error-message-404 {
+  margin: 25% 0% 25% 0%;
+}
+
+.home-button-404 {
+  height: 10em;
+}
+.shmeddit-logo-404 {
+  border-radius: 100em;
+  width: 10em;
+}
+
 @media only screen and (min-width: 600px) {
+  .articles {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: min-content auto;
+  }
+  .App {
+    text-align: center;
+    margin: 0% 5% 0% 5%;
+  }
+  .shmeddit-logo {
+    border-radius: 100em;
+    width: 4em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
   .articles {
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
@@ -154,7 +178,7 @@ li {
   }
   .App {
     text-align: center;
-    margin: 0% 10% 0% 10%;
+    margin: 0% 5% 0% 5%;
   }
   .shmeddit-logo {
     border-radius: 100em;

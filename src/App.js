@@ -13,27 +13,28 @@ function App() {
   const [topics, setTopics] = useState([]);
   const [hasError, setHasError] = useState(false);
   const willMatchTopics = ['football', 'coding', 'cooking'];
+  const [articles, setArticles] = useState([]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <ErrorContext.Provider value={{ hasError, setHasError }}>
         <div className="App">
+          {hasError && (
+            <Route exact path={`/articles/999`}>
+              <Page404 />
+            </Route>
+          )}
           <Banner topics={topics} setTopics={setTopics} />
           <Switch>
             <Route exact path={'/'}>
-              <Articles />
+              <Articles articles={articles} setArticles={setArticles} />
             </Route>
-            <Route exact path={'/articles/topics/:topic'} topics={topics}>
-              <Articles />
+            <Route exact path={'/topics/:topic/articles'}>
+              <Articles articles={articles} setArticles={setArticles} />
             </Route>
             <Route exact path={'/articles/:article_id'}>
               <SingleArticle />
             </Route>
-            {hasError && (
-              <Route exact path={`/articles/999`}>
-                <Page404 />
-              </Route>
-            )}
           </Switch>
         </div>
       </ErrorContext.Provider>

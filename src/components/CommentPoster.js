@@ -13,10 +13,9 @@ const CommentPoster = ({ setComments, id }) => {
         setComments((currComments) => {
           return [postedComment.comment[0], ...currComments];
         });
-      })
-      .catch(() => {
         setNewComment('');
-      });
+      })
+      .catch(() => {});
   };
 
   return (

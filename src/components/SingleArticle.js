@@ -4,17 +4,22 @@ import { getSingleArticle } from '../utils/api';
 import ArticleVoter from './ArticleVoter';
 import Comments from './Comments';
 import { convertTime } from '../utils/utils';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import {
+  Card,
+  CardContent,
+  CircularProgress,
+  Typography
+} from '@material-ui/core';
 import { ErrorContext } from '../contexts/error';
 
 const SingleArticle = () => {
   const [article, setArticle] = useState([[]]);
-  const params = useParams();
+  const { article_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const { setHasError } = useContext(ErrorContext);
 
   useEffect(() => {
-    getSingleArticle(params.article_id)
+    getSingleArticle(article_id)
       .then((articleFromApi) => {
         setArticle(articleFromApi);
         setIsLoading(false);
@@ -22,12 +27,12 @@ const SingleArticle = () => {
       .catch(() => {
         setHasError(true);
       });
-  }, [params.article_id]);
+  }, [article_id]);
 
   return (
     <div className="articles-page">
       {isLoading ? (
-        <p>...loading</p>
+        <CircularProgress color="primary" />
       ) : (
         <div>
           <Card>
@@ -55,11 +60,7 @@ const SingleArticle = () => {
         </div>
       )}
       <div>
-        {isLoading ? (
-          <p>...loading</p>
-        ) : (
-          <Comments id={article[0].article_id} />
-        )}
+        <Comments id={article_id} />
       </div>
     </div>
   );

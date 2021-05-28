@@ -33,11 +33,13 @@ const ArticleVoter = ({ votes, id }) => {
         disabled={incIsDisabled}
         startIcon={<ThumbUp />}
         onClick={incrementVote}
+        alt="like"
       ></Button>
       <Button
         disabled={decIsDisabled}
         startIcon={<ThumbDown />}
         onClick={decrementVote}
+        alt="dislike"
       ></Button>
     </div>
   );

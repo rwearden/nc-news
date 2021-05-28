@@ -171,4 +171,4 @@ It functions as a message board where users can read, vote and comment on articl
 
 ## Minimum Requirements
 
-To run this project you will need: - Node.js version ????? - PSQL version ?????
+To run this project you will need: - Node.js version v15.12.0

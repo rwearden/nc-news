@@ -7,8 +7,7 @@ import ArticleCard from './ArticleCard';
 import OrderSelector from './OrderSelector';
 import SortBySelector from './SortBySelector';
 
-const Articles = ({ topics }) => {
-  const [articles, setArticles] = useState([]);
+const Articles = ({ articles, setArticles }) => {
   const params = useParams();
   const { topic } = params;
   const [order, setOrder] = useState('ASC');
