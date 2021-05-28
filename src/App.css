@@ -150,7 +150,7 @@ li {
   .articles {
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-template-rows: ;
+    grid-template-rows: min-content auto;
   }
   .App {
     text-align: center;
