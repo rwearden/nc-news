@@ -9,7 +9,6 @@ import Page404 from './components/Page404';
 
 function App() {
   const [user, setUser] = useState('jessjelly');
-  // const [topics, setTopics] = useState([]);
   const [articles, setArticles] = useState([]);
 
   return (
