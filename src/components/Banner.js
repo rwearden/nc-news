@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar
 }));
 
-const Banner = ({ topics, setTopics }) => {
+const Banner = () => {
+  const [topics, setTopics] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {

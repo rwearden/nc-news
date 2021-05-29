@@ -62,7 +62,7 @@
 ​
 
 - [✓] Delete any unused variables (e.g. willMatchTopics)
-- [ ] Seems like topics could be stored lower down the component tree?
+- [✓] Seems like topics could be stored lower down the component tree?
 - [ ] Handle errors in individual components, rather than at top level
 - [ ] Get rid of any linting warnings from terminal
 - [✓] Don't need curly braces to use string literals in jsx:
