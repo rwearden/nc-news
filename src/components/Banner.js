@@ -37,18 +37,18 @@ const Banner = () => {
     <React.Fragment>
       <AppBar color="primary" className="banner">
         <Toolbar>
-          <Link to="/">
-            <div className="logo-container">
+          <div className="logo-container">
+            <Link to="/">
               <img
                 className="shmeddit-logo"
                 src={shmedditLogo}
                 alt="shmeddit-logo"
               />
-            </div>
-          </Link>
-          <Typography variant="h6" className={classes.title}>
-            Shmeddit: the 3th page of the internet
-          </Typography>
+            </Link>
+            <Typography className={classes.title}>
+              Shmeddit: the 3th page of the internet
+            </Typography>
+          </div>
           <div>
             <nav className="nav-bar">
               {topics.map((topic) => {

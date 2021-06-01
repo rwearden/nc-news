@@ -12,10 +12,7 @@ const ArticleCard = ({ article }) => {
             <div className="article-card-content">
               <Typography variant="caption">smh/{article.topic}</Typography>
               <Typography variant="caption">
-                Posted by: {article.author}
-              </Typography>
-              <Typography variant="caption">
-                Posted on: {convertTime(article.created_at)}
+                Posted by {article.author} - {convertTime(article.created_at)}
               </Typography>
               <Divider />
               <Typography variant="h6">{article.title}</Typography>

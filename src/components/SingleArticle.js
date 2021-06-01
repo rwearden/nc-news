@@ -45,10 +45,8 @@ const SingleArticle = () => {
                     smh/{article[0].topic}
                   </Typography>
                   <Typography variant="caption">
-                    Posted by: {article[0].author}
-                  </Typography>
-                  <Typography variant="caption">
-                    Posted on: {convertTime(article[0].created_at)}
+                    Posted by {article[0].author} -{' '}
+                    {convertTime(article[0].created_at)}
                   </Typography>
                   <Typography variant="h5" className="article-title">
                     {article[0].title}
