@@ -8,7 +8,7 @@ Back-end repo: https://github.com/rwearden/be-nc-news
 
 ## General Information
 
-This is a front-end CRUD application built with JSX, Node.js, React and Material UI.
+This is a front-end CRUD application built with React, Node.js and Material UI.
 
 It functions as a message board where users can read, vote and comment on articles.
 
